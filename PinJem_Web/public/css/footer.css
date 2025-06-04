@@ -1,0 +1,27 @@
+footer {
+  width: 100%;
+  background-color: var(--background-header);
+  color: var(--secondary-color);
+  padding: 1rem 0;
+  border-top: 1px solid var(--text-color);
+}
+
+footer .footer-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer .footer-container p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+@media (max-width: 767.98px) {
+  footer .footer-container p {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+}

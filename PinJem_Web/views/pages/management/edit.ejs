@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <%- include("../../layouts/head.ejs") %>
+    <link rel="stylesheet" href="/css/add.css" />
+  </head>
+  <body>
+    <main>
+      <div class="container main-container">
+        <h1>Edit Pengguna</h1>
+        <form action="/management/edit/<%= user.id %>" method="POST">
+          <input type="text" name="username" value="<%= user.username %>" required /><br />
+          <select name="role" value="<%= user.role %>">
+            <option value="administrator" <%= user.role === 'administrator' ? 'selected' : '' %>>Administrator</option>
+            <option value="user" <%= user.role === 'user' ? 'selected' : '' %>>User</option>
+          </select>
+          <br />
+          <input type="email" name="email" value="<%= user.email %>" required /><br />
+          <input type="password" name="password" placeholder="Password" /><br />
+          <button type="submit">Update</button>
+        </form>
+
+        <a href="/management" class="btn-back">Kembali</a>
+      </div>
+    </main>
+  </body>
+</html>

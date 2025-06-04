@@ -1,0 +1,25 @@
+<nav>
+  <div class="container nav-container">
+    <div class="menu">
+      <a href="/dashboard">Dashboard</a>
+      <% if (users && users.role === 'administrator') { %>
+      <a href="/management">Management</a>
+      <% } %>
+      <a href="/log">System Log</a>
+    </div>
+    <div class="logout">
+      <a href="/logout"><i class="ri-logout-box-r-fill"></i></a>
+    </div>
+  </div>
+</nav>
+<header>
+  <div class="container header-container">
+    <div class="hero">
+      <h1>Welcome to <br /><span>PinJem <%= title %></span>, <%= users.username %>!</h1>
+      <p>Namanya <strong>PinJem</strong>, singkatan dari “Pintar Jemuran”. Sistem ini adalah bentuk kemudahan yang ditawarkan dalam menjemur pakaian di tengah kepadatan aktivitas saat ini.</p>
+    </div>
+    <div class="hero-image">
+      <img src="/images/hero.png" alt="Hero Image" class="hero-logo" />
+    </div>
+  </div>
+</header>

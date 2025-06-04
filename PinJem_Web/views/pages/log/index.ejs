@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../../layouts/head.ejs") %>
+    <link rel="stylesheet" href="/css/log.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+  </head>
+  <body>
+    <%- include("../../layouts/header.ejs") %>
+
+    <main>
+      <div class="container main-container">
+        <form method="get" action="">
+          <label for="date">Pilih Tanggal:</label>
+          <input type="date" id="date" name="date" value="<%= selectedDate %>" />
+          <button type="submit">Tampilkan</button>
+        </form>
+
+        <h1 style="text-align: center">Ringkasan Data Hujan Per Hari</h1>
+
+        <table border="1" cellpadding="8" cellspacing="0">
+          <thead>
+            <tr style="background-color: #e74c3c; color: white">
+              <th>Tanggal</th>
+              <th>Status Hujan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if (rainSummary && typeof rainSummary.is_raining !== "undefined") { %>
+            <tr>
+              <td><%= selectedDate %></td>
+              <td><%= rainSummary.is_raining ? "Hujan" : "Tidak Hujan" %></td>
+            </tr>
+            <% } else { %>
+            <tr>
+              <td colspan="2">Tidak ada data hujan untuk tanggal ini.</td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+
+        <h1 style="margin-top: 60px; text-align: center">Perubahan Status Roof</h1>
+
+        <table border="1" cellpadding="8" cellspacing="0">
+          <thead>
+            <tr style="background-color: #e74c3c; color: white">
+              <th>Waktu</th>
+              <th>Status Roof</th>
+              <th>Mode</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if (roofChanges.length > 0) { %> <% roofChanges.forEach(entry => { %>
+            <tr>
+              <td><%= new Date(entry.timestamp).toLocaleString() %></td>
+              <td><%= entry.roof_state %></td>
+              <td><%= entry.mode %></td>
+            </tr>
+            <% }) %> <% } else { %>
+            <tr>
+              <td colspan="3">Tidak ada perubahan status roof untuk tanggal ini.</td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <%- include("../../layouts/footer.ejs") %>
+  </body>
+</html>

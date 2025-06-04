@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <%- include("../../layouts/head.ejs") %>
+    <link rel="stylesheet" href="/css/management.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+  </head>
+  <body>
+    <%- include("../../layouts/header.ejs") %>
+
+    <main>
+      <div class="container management-container">
+        <a href="management/create" class="create-btn">Tambah User</a>
+
+        <table border="1" cellpadding="8" cellspacing="0">
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% data.forEach((user, index) => { %>
+            <tr>
+              <td><%= index + 1 %></td>
+              <td><%= user.username %></td>
+              <td><%= user.email %></td>
+              <td><%= user.role %></td>
+              <td>
+                <a href="management/edit/<%= user.id %>">Edit</a>
+                <a href="management/delete/<%= user.id %>" onclick="return confirm('Yakin?')">Hapus</a>
+              </td>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <%- include("../../layouts/footer.ejs") %>
+  </body>
+</html>

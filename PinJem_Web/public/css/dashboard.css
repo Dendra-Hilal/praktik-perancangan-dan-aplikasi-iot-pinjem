@@ -1,0 +1,213 @@
+main {
+  width: 100%;
+}
+
+main .main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 5rem 0;
+}
+
+main .main-container .state-content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 4rem;
+  margin-bottom: 5rem;
+}
+
+main .main-container .state-content .state-panel {
+  flex: 3;
+  width: 100%;
+}
+
+main .main-container .state-content .state-panel h2 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+}
+
+main .main-container .state-content .state-panel .grid-state {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+main .main-container .state-content .state-panel .grid-state .state-item {
+  padding: 1.5rem 2rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  border: 1px solid var(--text-color);
+}
+
+.state-item:nth-child(1) {
+  background-color: #e5ffea;
+}
+
+.state-item:nth-child(2) {
+  background-color: #e7e5ff;
+}
+
+.state-item:nth-child(3) {
+  background-color: #fffee5;
+}
+
+.state-item:nth-child(4) {
+  background-color: #f8e5ff;
+}
+
+main .main-container .state-content .state-panel .grid-state .state-item .item-icon {
+  width: 100%;
+  max-width: 50px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main .main-container .state-content .state-panel .grid-state .state-item .item-icon i {
+  font-size: 3rem;
+}
+
+main .main-container .state-content .state-panel .grid-state .state-item .item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+main .main-container .state-content .state-panel .grid-state .state-item .item-info .label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+main .main-container .state-content .control-panel {
+  flex: 1;
+  width: 100%;
+}
+
+main .main-container .state-content .control-panel h2 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+main .main-container .state-content .control-panel .btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+main .main-container .state-content .control-panel .btn-group button {
+  padding: 1rem 2rem;
+  background-color: var(--btn-background);
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+main .main-container .state-content .control-panel .btn-group button:hover {
+  color: var(--secondary-color);
+  background-color: #eb4141;
+  transform: translateY(-3px);
+}
+
+main .main-container .chart-content {
+  flex: 2 1 600px;
+}
+
+.chart-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.chart-panel {
+  width: 100%;
+  border: 1px solid var(--text-color);
+  background-color: #ffffff;
+  padding: 5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.chart-panel canvas {
+  background-color: #ffffff;
+  border-radius: 12px;
+  max-height: 350px;
+  width: 100% !important;
+  display: block;
+}
+
+@media (max-width: 991.98px) {
+  main .main-container {
+    padding: 3rem 0;
+  }
+
+  main .main-container .state-content {
+    flex-direction: column;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  main .main-container .state-content .state-panel,
+  main .main-container .state-content .control-panel {
+    flex: none;
+    width: 100%;
+  }
+
+  main .main-container .state-content .control-panel h2 {
+    text-align: left;
+  }
+
+  main .main-container .state-content .state-panel .grid-state {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  .chart-panel {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  main .main-container .state-content .state-panel h2,
+  main .main-container .state-content .control-panel h2,
+  .chart-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  main .main-container .state-content .state-panel .grid-state {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  main .main-container .state-content .state-panel .grid-state .state-item {
+    padding: 1rem 1.5rem;
+  }
+
+  main .main-container .state-content .control-panel .btn-group button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+
+  .chart-content {
+    flex: none;
+    width: 100%;
+  }
+}

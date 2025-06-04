@@ -1,0 +1,109 @@
+main {
+  width: 100%;
+}
+
+main .management-container {
+  padding: 5rem 0;
+}
+
+main .management-container .create-btn {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1.2rem;
+  text-decoration: none;
+  background-color: var(--btn-background);
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+main .management-container .create-btn:hover {
+  color: var(--secondary-color);
+  background-color: #eb4141;
+  transform: translateY(-3px);
+}
+
+main .management-container .table-responsive-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+main .management-container table {
+  width: 100%;
+  min-width: 400px;
+  border-collapse: collapse;
+  border: 1px solid var(--text-color);
+}
+
+main .management-container th,
+main .management-container td {
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+main .management-container th {
+  background-color: #eb4141;
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+main .management-container tbody tr:nth-child(even) {
+  background-color: #e9e9e9;
+}
+
+main .management-container td:nth-child(4) {
+  text-transform: capitalize;
+}
+
+main .management-container td a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: var(--link-color, #007bff);
+  transition: color 0.2s ease-in-out;
+}
+
+main .management-container td a:hover {
+  color: var(--link-hover-color, #0056b3);
+  text-decoration: underline;
+}
+
+main .management-container td a[href*="delete"] {
+  color: var(--delete-link-color, #dc3545);
+}
+
+main .management-container td a[href*="delete"]:hover {
+  color: var(--delete-link-hover-color, #c82333);
+}
+
+@media (max-width: 768px) {
+  main .management-container {
+    padding: 3rem 0;
+  }
+
+  main .management-container th,
+  main .management-container td {
+    padding: 0.5rem 0.3rem;
+  }
+
+  main .management-container .create-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  main .management-container {
+    padding: 2rem 0;
+  }
+
+  main .management-container th,
+  main .management-container td {
+    font-size: 0.9rem;
+  }
+}

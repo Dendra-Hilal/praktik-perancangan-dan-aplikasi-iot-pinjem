@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <%- include("../../layouts/head.ejs") %>
+    <link rel="stylesheet" href="/css/auth.css" />
+  </head>
+  <body>
+    <main>
+      <div class="container main-container">
+        <div class="login-form">
+          <img src="/images/hero.png" alt="Login Image" />
+          <h1><span>PinJem</span> Login</h1>
+          <% if (error) { %>
+          <p class="error-message"><%= error %></p>
+          <% } %>
+          <form action="/login" method="post">
+            <input type="email" name="email" placeholder="Email" required />
+            <input type="password" name="password" placeholder="Password" required />
+            <button type="submit">Login</button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

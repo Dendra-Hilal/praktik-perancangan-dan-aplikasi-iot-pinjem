@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <%- include("../../layouts/head.ejs") %>
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/dashboard.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+  <body>
+    <%- include("../../layouts/header.ejs") %>
+
+    <main>
+      <div class="container main-container">
+        <div class="state-content">
+          <div class="state-panel">
+            <h2>Real-Time State</h2>
+            <div class="grid-state">
+              <div class="state-item">
+                <div class="item-icon">
+                  <i class="ri-sun-cloudy-fill"></i>
+                </div>
+                <div class="item-info">
+                  <span class="label">Cuaca</span>
+                  <span id="weather-state" class="value box-state">Memuat ...</span>
+                </div>
+              </div>
+              <div class="state-item">
+                <div class="item-icon">
+                  <i class="ri-rainy-fill"></i>
+                </div>
+                <div class="item-info">
+                  <span class="label">Hujan</span>
+                  <span id="rain-state" class="value box-state">Memuat ...</span>
+                </div>
+              </div>
+              <div class="state-item">
+                <div class="item-icon">
+                  <i class="ri-home-9-fill"></i>
+                </div>
+                <div class="item-info">
+                  <span class="label">Atap</span>
+                  <span id="roof-state" class="value box-state">Memuat ...</span>
+                </div>
+              </div>
+              <div class="state-item">
+                <div class="item-icon">
+                  <i class="ri-remote-control-fill"></i>
+                </div>
+                <div class="item-info">
+                  <span class="label">Mode</span>
+                  <span id="mode-state" class="value box-state">Memuat ...</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="control-panel">
+            <h2>Manual Control</h2>
+            <div class="btn-group">
+              <button id="btn-open">Buka Atap</button>
+              <button id="btn-close">Tutup Atap</button>
+              <button id="btn-auto">Mode Otomatis</button>
+            </div>
+          </div>
+        </div>
+        <div class="chart-content">
+          <h2>Sensor Chart</h2>
+          <div class="chart-panel">
+            <canvas id="sensor-chart"></canvas>
+          </div>
+      </div>
+    </main>
+
+    <%- include("../../layouts/footer.ejs") %>
+
+    <aside></aside>
+    <script src="js/script.js"></script>
+  </body>
+</html>

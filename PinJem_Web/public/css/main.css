@@ -1,0 +1,28 @@
+:root {
+  --primary-color: #ba3a2c;
+  --secondary-color: #ffffff;
+  --text-color: #191919;
+  --background-header: #fbeded;
+  --btn-background: #ffdcd8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-color);
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f8f8f8;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+}
