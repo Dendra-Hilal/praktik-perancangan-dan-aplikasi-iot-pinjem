@@ -37,24 +37,6 @@
 
 ---
 
-## 🧱 Struktur Proyek
-
-\`\`\`
-PinJem/
-├── firmware/              # Kode ESP8266
-├── web-app/
-│   ├── routes/
-│   ├── views/
-│   ├── public/
-│   ├── models/
-│   └── app.js
-├── database/
-│   └── schema.sql
-└── README.md
-\`\`\`
-
----
-
 ## 🧪 Pengujian Sistem
 
 Semua fitur diuji menggunakan metode black-box testing dan hasilnya *berfungsi sesuai rencana*, termasuk:
