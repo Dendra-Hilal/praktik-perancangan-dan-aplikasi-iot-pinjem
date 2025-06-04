@@ -48,26 +48,6 @@ Semua fitur diuji menggunakan metode black-box testing dan hasilnya *berfungsi s
 
 ---
 
-## 🔧 Instalasi
-
-### 📍 Firmware ESP8266
-
-1. Buka `firmware/` dengan Arduino IDE.
-2. Atur WiFi SSID dan Password.
-3. Upload ke NodeMCU ESP8266.
-
-### 💻 Aplikasi Web
-
-\`\`\`bash
-cd web-app
-npm install
-node app.js
-\`\`\`
-
-Pastikan database MySQL aktif dan kredensial disesuaikan.
-
----
-
 ## 👥 Tim Pengembang
 
 | Nama                     | NIM        | Peran         |
